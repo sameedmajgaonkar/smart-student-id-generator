@@ -1,0 +1,55 @@
+import { Student } from "../../schema";
+import profile from "../../assets/profile.jpg";
+import { QRCodeSVG } from "qrcode.react";
+import { useRef } from "react";
+import { toPng } from "html-to-image";
+import download from "downloadjs";
+
+interface Props {
+  student: Student;
+}
+const Card_1 = ({ student }: Props) => {
+  const ref = useRef<HTMLDivElement>(null);
+  return (
+    <>
+      <div className="w-1/2 bg-gray-300 grid gap-2 p-5" ref={ref}>
+        <h3 className="text-center font-bold text-4xl">Student ID Card</h3>
+        <div className="grid grid-cols-3 gap-5">
+          <div className="rounded-full overflow-hidden aspect-square border-8">
+            <img
+              src={profile}
+              alt="Profile picture"
+              className="object-cover object-center"
+            />
+          </div>
+          <div className="space-y-3">
+            <p>
+              Name:{" "}
+              {`${student.firstName} ${student.middleName} ${student.lastName}`}
+            </p>
+            <p>Class: {student.class}</p>
+            <p>Roll Number: {student.rollNumber}</p>
+            <p>Allergies: {student.allergies}</p>
+            <p>Rack Number: {student.rackNumber}</p>
+            <p>Bus Route Number: {student.busRouteNumber}</p>
+          </div>
+          <div>
+            <QRCodeSVG value={JSON.stringify(student)} />
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={() => {
+          if (ref.current === null) return;
+          toPng(ref.current).then((dataUrl) =>
+            download(dataUrl, "student_id.png")
+          );
+        }}
+      >
+        Download
+      </button>
+    </>
+  );
+};
+
+export default Card_1;

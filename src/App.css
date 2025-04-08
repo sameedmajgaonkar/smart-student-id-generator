@@ -1,0 +1,10 @@
+.form-group{
+    display: grid;
+    gap: 1rem;
+}
+
+.form-control{
+    padding: .3rem .5rem;
+    border: 1px solid black;
+    outline: none;
+}
