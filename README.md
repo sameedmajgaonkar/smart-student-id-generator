@@ -14,7 +14,7 @@ Smart Student ID Generator is a React-based web application that simplifies the 
 
 ## Live Demo
 
-The application is deployed on Replit and can be accessed [here](https://b87acdc3-9350-4358-b1e9-511053bc43ef-00-1kvzvzpb11va8.pike.replit.dev/).
+The application is deployed on Replit and can be accessed [here](https://c912b721-410f-4425-b794-7122b2a12185-00-1wxnuelyi9se.sisko.replit.dev/).
 
 ## Features
 
