@@ -140,7 +140,7 @@ const StudentForm = () => {
 
   return (
     <form
-      className="border-2  border-gray-950 rounded-xl p-10 w-1/2 grid gap-4"
+      className="border-2  border-gray-950 rounded-xl p-10 md:w-1/2 grid gap-4"
       onSubmit={handleSubmit(doSubmit)}
     >
       <h3 className="text-center font-bold text-4xl">Student ID Card Form</h3>

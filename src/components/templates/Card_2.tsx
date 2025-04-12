@@ -1,8 +1,7 @@
-import { useRef } from "react";
-import { QRCodeSVG } from "qrcode.react";
-import { toPng } from "html-to-image";
 import download from "downloadjs";
-import profile from "../../assets/profile.jpg";
+import { toPng } from "html-to-image";
+import { QRCodeSVG } from "qrcode.react";
+import { useRef } from "react";
 import { Student } from "../../schema";
 
 const Card_2 = ({ student }: { student: Student }) => {
