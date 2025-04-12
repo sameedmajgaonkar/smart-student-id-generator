@@ -1,4 +1,3 @@
-import { v4 } from "uuid";
 import { Student } from "../schema";
 
 const STUDENTS_STORAGE_KEY = "STUDENTS_STORAGE_KEY";
@@ -16,10 +15,9 @@ function get(id: string) {
 
 function create(student: Student) {
   const students = getAll();
-  student.id = v4(); // generate unique id
   students.push(student);
   localStorage.setItem(STUDENTS_STORAGE_KEY, JSON.stringify(students));
   return student;
 }
 
-export { getAll, get, create };
+export { create, get, getAll };

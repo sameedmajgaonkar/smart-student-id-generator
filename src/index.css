@@ -1,7 +1,2 @@
 @import "tailwindcss";
 
-@layer components{
-  .container{
-    @apply flex justify-center items-center p-5;
-  }
-}

@@ -1,6 +1,7 @@
 import { z } from "zod";
 export const formSchema = z.object({
-  id: z.string().optional(),
+  id: z.string(),
+  profilePic: z.any(),
   firstName: z
     .string()
     .min(2, { message: "First name must be at least 2 characters." })
@@ -27,4 +28,4 @@ export const formSchema = z.object({
   }),
 });
 
-export type StudentData = z.infer<typeof formSchema>;
+export type Student = z.infer<typeof formSchema>;
